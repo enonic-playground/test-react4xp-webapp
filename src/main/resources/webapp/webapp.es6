@@ -1,20 +1,27 @@
-import thymeleaf from '/lib/thymeleaf';
-import {
-  assetUrl as getAssetUrl,
-  serviceUrl as getServiceUrl
-} from '/lib/xp/portal';
+import Router from '/lib/router';
+import {get as getStandalone} from './standalone';
+import {get as getWithHelpers} from './withHelpers';
 
 
-const VIEW = resolve('webapp.html');
-const SITE_NAME = 'webapp';
+const router = Router();
 
 
-exports.get = () => ({
-        contentType: 'text/html',
-        body: thymeleaf.render(VIEW, {
-          apiUrl: `/admin/site/preview/default/draft/${SITE_NAME}/api/headless` ,
-          assetRoot: getAssetUrl({path: ''}),
-          serviceRoot: getServiceUrl({service: ''}),
-          SITE_NAME
-        })
-});
+router.all('/', () => ({
+  body: `<html>
+  <head>
+  	<title>Test React4xp Webapp</title>
+  </head>
+  <body>
+  	<h1>Test React4xp Webapp</h1>
+  	<ul>
+  		<li><a href="standalone/">standalone</a></li>
+      <li><a href="withHelpers/">withHelpers</a></li>
+  	</ul>
+  </body>
+</html>`
+}));
+router.all('/standalone', (r) => getStandalone(r));
+router.all('/withHelpers', (r) => getWithHelpers(r));
+
+
+export const all = (r) => router.dispatch(r);
