@@ -1,64 +1,42 @@
 {
-    "name": "starter-react4xp",
-    "version": "2.1.0",
-    "description": "React4xp starter for Enonic XP7.0",
-    "scripts": {
-        "install:dev": "nsi",
-        "install:prod": "npm install",
-        "clean": "./gradlew clean --refresh-dependencies  --info",
-        "build": "./gradlew build --info",
-        "deploy": "./gradlew deploy --info",
-        "rebuild": "npm run clean && npm run build",
-        "redeploy": "npm run rebuild && npm run deploy",
-        "dev": "npm run redeploy && npm run watch:all",
-        "watch": "npm-run-all --parallel watch:xp watch:r4xp",
-        "watch:all": "npm-run-all --parallel watch:gradle watch:xp watch:react4xp",
-        "watch:gradle": "./gradlew deploy --info -t",
-        "watch:react4xp": "webpack --env.REACT4XP_CONFIG_FILE=build/react4xp_constants.json --config node_modules/react4xp-build-components/webpack.config.js --progress --watch",
-        "watch:xp": "babel src/main/resources --out-dir build/resources/main --ignore **/*.jsx --progress --watch"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/enonic/starter-react4xp.git"
-    },
-    "author": "Espen Norderud",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/enonic/starter-react4xp/issues"
-    },
-    "homepage": "https://github.com/enonic/starter-react4xp#readme",
-    "dependencies": {
-        "node-fetch": "^3.2.3",
-        "prop-types": "^15.8.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react4xp": "2.0.0"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.17.6",
-        "@babel/compat-data": "^7.17.7",
-        "@babel/core": "^7.17.8",
-        "@babel/plugin-proposal-class-properties": "^7.16.7",
-        "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
-        "@babel/plugin-transform-arrow-functions": "^7.16.7",
-        "@babel/preset-env": "^7.16.11",
-        "@babel/preset-react": "^7.16.7",
-        "babel-loader": "^8.2.4",
-        "css-loader": "^6.7.1",
-        "mini-css-extract-plugin": "^2.6.0",
-        "npm-run-all": "^4.1.5",
-        "sass": "^1.49.10",
-        "sass-loader": "^12.6.0",
-        "webpack": "^5.70.0",
-        "webpack-cli": "^4.9.2"
-    },
-    "babel": {
-        "presets": [
-            "@babel/preset-env"
-        ],
-        "plugins": [
-            "@babel/plugin-proposal-object-rest-spread",
-            "@babel/plugin-transform-arrow-functions"
-        ]
-    }
+  "author": "Espen Norderud",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-arrow-functions"
+    ]
+  },
+  "contributors": [
+    "Christian Westgaard <cwe@enonic.com>"
+  ],
+  "dependencies": {
+    "node-fetch": "^3.2.3",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/compat-data": "^7.17.7",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-transform-arrow-functions": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@enonic/react-components": "^3.0.1",
+    "@enonic/react4xp": "^3.0.8",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.10",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "private": true
 }
