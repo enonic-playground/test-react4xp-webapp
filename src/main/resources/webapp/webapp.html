@@ -8,11 +8,11 @@
         <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 
-        <script src="(...my.asset.url) /react4xp/shared.{hash}.js"></script>
-        <link rel="stylesheet" type="text/css" href="(...my.asset.url) /react4xp/shared.{hash}.css" />
-        <link rel="stylesheet" type="text/css" href="(...my.asset.url) /react4xp/MovieList.css" />
+        <script th:src="${serviceRoot + '/react4xp/shared.cb015a136.js'}"></script>
+        <link rel="stylesheet" type="text/css" th:href="${serviceRoot + '/react4xp/shared.css'}" />
+        <link rel="stylesheet" type="text/css" th:href="${serviceRoot + '/react4xp/MovieList.css'}" />
 
-        <script src="(...my.asset.url) /react4xp/MovieList.js"></script>
+        <script th:src="${serviceRoot + '/react4xp/MovieList.js'}"></script>
 
         <style>
             body { margin: 0; padding: 0; }
@@ -29,15 +29,15 @@
         </div>
 
         <script>
-            var MOVIE_LIST_PARAMS= {
-                parentPath: '/moviesite',
-                apiUrl: '/admin/site/preview/default/draft/moviesite/api/headless',
-                movieType: 'com.enonic.app.react4xp:movie',
+            var MOVIE_LIST_PARAMS = {
+                parentPath: '/[[${SITE_NAME}]]',
+                apiUrl: '[[${apiUrl}]]',
+                movieType: 'com.enonic.test.app.react4xp.webapp:movie',
                 movieCount: 3,
                 sortExpression: 'data.year ASC',
             };
         </script>
 
-        <script defer src="(...my.asset.url) /webapp/script.js"></script>
+        <script defer th:src="${assetRoot + '/webapp/script.js'}"></script>
     </body>
 </html>
