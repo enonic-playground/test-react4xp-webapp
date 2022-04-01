@@ -2,6 +2,9 @@
 <site>
   <form/>
   <mappings>
+    <mapping controller="/controllers/previewMovie.js" order="50">
+      <match>type:'com.enonic.test.app.react4xp.webapp:movie'</match>
+    </mapping>
     <!--
 
     Maps the path <domain/site>/api/headless up to the controller src/main/resources/headless/guillotineApi.es6 (.js after compilation),
