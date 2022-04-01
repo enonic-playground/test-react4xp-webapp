@@ -7,7 +7,7 @@
         <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 
-        <script data-th-src="${portal.serviceUrl({'_service=react4xp-client'})}" src=""></script>
+        [(${bodyEnd})]
 
         <style>
             body { margin: 0; padding: 0; }
@@ -27,7 +27,7 @@
         var MOVIE_LIST_PARAMS= {
             serviceUrlRoot: '${portal.serviceUrl({'_service='})}',
             parentPath: '${sitePath}',
-            apiUrl: '/admin/site/preview/default/draft${sitePath}/api/headless',
+            apiUrl: '/site/default/master${sitePath}/api/headless',
             movieType: '${movieType}',
             movieCount: 3,
             sortExpression: 'data.year ASC',
