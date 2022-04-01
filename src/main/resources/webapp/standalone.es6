@@ -7,7 +7,11 @@ import {
 
 
 const VIEW = resolve('standalone.html');
+
+const PROJECT = 'default';
+const BRANCH = 'master';
 const SITE_NAME = 'webapp';
+const SITE_ROOT = `/site/${PROJECT}/${BRANCH}/${SITE_NAME}`;
 
 
 /*function toStr(value, replacer, space = 4) {
@@ -31,10 +35,11 @@ export function get() {
   }
   //log.debug(`bodyEndArray:%s`, toStr(bodyEndArray));
 
+
   return {
     contentType: 'text/html',
     body: thymeleaf.render(VIEW, {
-      apiUrl: `/admin/site/preview/default/draft/${SITE_NAME}/api/headless`,
+      apiUrl: `${SITE_ROOT}/api/headless`,
       assetRoot: getAssetUrl({path: ''}),
       bodyEnd: bodyEndArray.join('\n'),
       serviceRoot: getServiceUrl({service: ''}),
