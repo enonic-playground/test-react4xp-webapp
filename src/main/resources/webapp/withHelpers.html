@@ -26,8 +26,8 @@
         <script data-th-utext="|
         var MOVIE_LIST_PARAMS= {
             serviceUrlRoot: '${portal.serviceUrl({'_service='})}',
-            parentPath: '${sitePath}',
-            apiUrl: '/site/default/master${sitePath}/api/headless',
+            parentPath: '/${SITE_NAME}',
+            apiUrl: '/site/${PROJECT}/${BRANCH}/${SITE_NAME}/api/headless',
             movieType: '${movieType}',
             movieCount: 3,
             sortExpression: 'data.year ASC',

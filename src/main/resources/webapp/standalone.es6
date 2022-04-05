@@ -1,4 +1,4 @@
-import {getComponentChunkUrls} from '/lib/enonic/react4xp';
+import {getAssetUrls} from '/lib/enonic/react4xp';
 import thymeleaf from '/lib/thymeleaf';
 import {
   assetUrl as getAssetUrl,
@@ -20,17 +20,17 @@ const SITE_ROOT = `/site/${PROJECT}/${BRANCH}/${SITE_NAME}`;
 
 
 export function get() {
-  const componentChunkUrls = getComponentChunkUrls(['MovieList']);
-  //log.debug(`componentChunkUrls:%s`, toStr(componentChunkUrls));
+  const assetUrls = getAssetUrls('MovieList');
+  //log.debug(`assetUrls:%s`, toStr(assetUrls));
 
   const bodyEndArray = [];
-  for (let i = 0; i < componentChunkUrls.length; i++) {
-    const url = componentChunkUrls[i];
-    const ext = url.split('.').pop();
+  for (let i = 0; i < assetUrls.length; i++) {
+    const assetUrl = assetUrls[i];
+    const ext = assetUrl.split('.').pop();
     if (ext === 'css') {
-      bodyEndArray.push(`<link rel="stylesheet" type="text/css" href="${url}" />`);
+      bodyEndArray.push(`<link rel="stylesheet" type="text/css" href="${assetUrl}" />`);
     } else if (ext === 'js') {
-      bodyEndArray.push(`<script src="${url}"></script>`);
+      bodyEndArray.push(`<script src="${assetUrl}"></script>`);
     }
   }
   //log.debug(`bodyEndArray:%s`, toStr(bodyEndArray));

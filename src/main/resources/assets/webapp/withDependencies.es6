@@ -114,7 +114,6 @@ const renderMovies = (movies) => {
         sortExpression: MOVIE_LIST_PARAMS.sortExpression
     };
 
-    (1)
     React4xp.CLIENT.renderWithDependencies(
         {
             'MovieList': {
