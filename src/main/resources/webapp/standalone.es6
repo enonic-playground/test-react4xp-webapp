@@ -40,6 +40,7 @@ export function get() {
     contentType: 'text/html',
     body: thymeleaf.render(VIEW, {
       apiUrl: `${SITE_ROOT}/api/headless`,
+      APP_NAME: app.name,
       assetRoot: getAssetUrl({path: ''}),
       bodyEnd: bodyEndArray.join('\n'),
       serviceRoot: getServiceUrl({service: ''}),
