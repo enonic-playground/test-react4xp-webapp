@@ -23,14 +23,14 @@ export function get() {
   const assetUrls = getAssetUrls('MovieList');
   //log.debug(`assetUrls:%s`, toStr(assetUrls));
 
-  const bodyEndArray = [];
+  const assetsArray = [];
   for (let i = 0; i < assetUrls.length; i++) {
     const assetUrl = assetUrls[i];
     const ext = assetUrl.split('.').pop();
     if (ext === 'css') {
-      bodyEndArray.push(`<link rel="stylesheet" type="text/css" href="${assetUrl}" />`);
+      assetsArray.push(`<link rel="stylesheet" type="text/css" href="${assetUrl}" />`);
     } else if (ext === 'js') {
-      bodyEndArray.push(`<script src="${assetUrl}"></script>`);
+      assetsArray.push(`<script src="${assetUrl}"></script>`);
     }
   }
   //log.debug(`bodyEndArray:%s`, toStr(bodyEndArray));
@@ -42,7 +42,7 @@ export function get() {
       apiUrl: `${SITE_ROOT}/api/headless`,
       APP_NAME: app.name,
       assetRoot: getAssetUrl({path: ''}),
-      bodyEnd: bodyEndArray.join('\n'),
+      assetsHtml: assetsArray.join('\n'),
       serviceRoot: getServiceUrl({service: ''}),
       SITE_NAME
     })

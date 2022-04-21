@@ -20,7 +20,7 @@ export function get(req) {
   //log.debug(`clientUrl:%s`, toStr(clientUrl));
 
   const model = {
-    bodyEnd: `<script src="${clientUrl}"></script>`,
+    clientAssetHtml: `<script src="${clientUrl}"></script>`,
     BRANCH,
     movieType: `${app.name}:movie`,
     PROJECT,
